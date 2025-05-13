@@ -11,14 +11,14 @@ class PDFController extends Controller
     public function exportPDF()
     {
         // Ambil data dari API backend
-        $response = Http::get(env('CODEIGNITER_API').'/Absensi');
+        $response = Http::get('http://localhost:8080/Absensi');
         $absensi = $response->json();
 
         // Pastikan respons adalah array
-        $absen = $absensi['tb_absensi']??[];
+        $absen = collect($absensi);
 
         // Generate PDF
-        $pdf = Pdf::loadView('pdf.pdf-absensi', ['absensi' => $absensi]);
+        $pdf = Pdf::loadView('pdf.pdf-absensi', ['absensi' => $absen]);
         return $pdf->download('daftar-hadir.pdf');
     }
 }

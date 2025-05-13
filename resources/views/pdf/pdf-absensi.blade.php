@@ -32,24 +32,23 @@
     <table>
         <thead>
             <tr>
-                <th>No</th>
                 <th>ID Kehadiran</th>
                 <th>NPM</th>
+                <th>Id Dosen</th>
                 <th>ID Matkul</th>
                 <th>Pertemuan</th>
                 <th>Keterangan</th>
             </tr>
         </thead>
         <tbody>
-        @foreach($absen as $index )
+        @foreach($absensi as $index )
             <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>{{ $absen['id_kehadiran'] }}</td>
-                <td>{{ $absen['npm'] }}</td>
-                <td>{{ $absen['id_dosen'] }}</td>
-                <td>{{ $absen['id_matkul'] }}</td>
-                <td>{{ $absen['pertemuan'] }}</td>
-                <td>{{ $absen['keterangan'] }}</td>
+                <td>{{ $index['id_kehadiran'] }}</td>
+                <td>{{ $index['npm'] }}</td>
+                <td>{{ $index['id_dosen'] }}</td>
+                <td>{{ $index['id_matkul'] }}</td>
+                <td>{{ $index['pertemuan'] }}</td>
+                <td>{{ $index['keterangan'] }}</td>
             </tr>
         @endforeach
         </tbody>

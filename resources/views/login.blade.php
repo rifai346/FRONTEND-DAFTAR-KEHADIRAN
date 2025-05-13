@@ -10,19 +10,72 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            color: #fff;
         }
         .login-container {
-            max-width: 400px;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            width: 380px;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .login-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+        .login-container h3 {
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+        }
+        .form-control {
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+        .text-center {
+            margin-top: 15px;
+            color: #666;
+        }
+        .text-center a {
+            color: #007bff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .text-center a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 <div class="login-container">
-    <h3 class="text-center">Login</h3>
+    <h3>Welcome Back!</h3>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -32,16 +85,14 @@
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
-        <div class="mb-3">
-            <label for="email">Email</label>
-            <input type="email" name="email" class="form-control" required>
-        </div>
-        <div class="mb-3">
-            <label for="password">Password</label>
-            <input type="password" name="password" class="form-control" required>
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Login</button>
+        <input type="email" name="email" class="form-control" placeholder="Email" required>
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
+        <button type="submit" class="btn btn-primary">Login</button>
     </form>
+
+    <div class="text-center">
+        <p>Don't have an account? <a href="{{ route('register.form') }}">Register Now</a></p>
+    </div>
 </div>
 </body>
 </html>

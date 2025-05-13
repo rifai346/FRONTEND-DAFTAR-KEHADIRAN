@@ -42,6 +42,7 @@
                 <th scope="col"class="text-center w-auto">ID Kehadiran</th>
                 <th scope="col"class="text-center w-auto">NPM</th>
                 <th scope="col"class="text-center w-auto">ID Dosen</th>
+                <th scope="col"class="text-center w-auto">ID Matkul</th>
                 <th scope="col"class="text-center w-auto">Pertemuan 1</th>
                 <th scope="col"class="text-center w-auto">Pertemuan 2</th>
                 <th scope="col"class="text-center w-auto">Pertemuan 3</th>
@@ -57,6 +58,7 @@
                 <td class="text-center">{{ $data['id_kehadiran'] }}</td>
                 <td class="text-center">{{ $data['npm'] }}</td>
                 <td class="text-center">{{ $data['id_dosen'] }}</td>
+                <td class="text-center">{{ $data['id_matkul'] }}</td>
                 <td class="text-center">{{ $data['keterangan'] }}</td>
                 <td class="text-center">{{ $data['keterangan'] }}</td>
                 <td class="text-center">{{ $data['keterangan'] }}</td>
